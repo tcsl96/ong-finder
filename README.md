@@ -19,11 +19,11 @@ Projeto de demonstração para o Spring Boot
 2.  **Configuração do Banco de Dados:**
     - Certifique-se de ter o PostgreSQL instalado e em execução.
     - Crie um novo banco de dados chamado `ongfinder`.
-    - Abra o arquivo `src/main/resources/application.properties` e atualize as seguintes propriedades com suas credenciais do PostgreSQL:
-      ```properties
-      spring.datasource.url=jdbc:postgresql://localhost:5432/ongfinder
-      spring.datasource.username=seu_usuario_postgres
-      spring.datasource.password=sua_senha_postgres
+    - Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis de ambiente:
+      ```
+      DB_URL=jdbc:postgresql://localhost:5432/ongfinder
+      DB_USERNAME=seu_usuario_postgres
+      DB_PASSWORD=sua_senha_postgres
       ```
 
 3.  **Execute a aplicação:**
