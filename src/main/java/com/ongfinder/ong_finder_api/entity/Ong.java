@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ongs")
-public class Ong {
+public class Ong implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,14 +21,17 @@ public class Ong {
     private Categoria categoria;
 
     private String website;
-
-    // Para a foto, o mais comum é salvar a URL ou o caminho do arquivo
     private String urlFoto;
-
     private String telefone;
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false)
+    private String senha;
+
+    @Column(nullable = false)
+    private boolean ativo = true;
 
     @Embedded
     private Endereco endereco;
@@ -41,10 +44,8 @@ public class Ong {
     )
     private java.util.Set<Voluntario> voluntarios = new java.util.HashSet<>();
 
-
     public Ong() {
     }
-
 
     public Long getId() {
         return id;
@@ -108,6 +109,48 @@ public class Ong {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+
+    @Override
+    public String getUsername() {
+        return this.email;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.senha;
+    }
+
+    @Override
+    public String getRole() {
+        return "ROLE_ONG";
+    }
+
+    @Override
+    public boolean isActive() {
+        return this.ativo;
+    }
+
+    @Override
+    public Long getUserId() {
+        return this.id;
     }
 
     public Endereco getEndereco() {

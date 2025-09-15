@@ -1,5 +1,7 @@
+
+
 services:
-  postgres:
+  postgres_ongfinder:
     image: postgres:15
     container_name: postgres_ongfinder
     environment:
@@ -20,14 +22,14 @@ services:
     build: .
     container_name: app_ongfinder
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME}
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_ongfinder:5432/${DB_NAME}
       SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
     ports:
       - "8080:8080"
     depends_on:
-      postgres:
+      postgres_ongfinder:
         condition: service_healthy
 
 volumes:

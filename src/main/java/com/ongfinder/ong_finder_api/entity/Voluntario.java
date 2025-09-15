@@ -6,10 +6,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.HashSet;
 import java.util.Set;
 
-
 @Entity
 @Table(name = "voluntarios")
-public class Voluntario {
+public class Voluntario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,20 +31,21 @@ public class Voluntario {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column(nullable = false)
+    private String senha;
+
+    @Column(nullable = false)
+    private boolean ativo = true;
+
     @Embedded
     private Endereco endereco;
-
-
 
     @JsonIgnore
     @ManyToMany(mappedBy = "voluntarios")
     private Set<Ong> ongs = new HashSet<>();
 
-
     public Voluntario() {
     }
-
-
 
     public Long getId() {
         return id;
@@ -103,6 +103,47 @@ public class Voluntario {
         this.email = email;
     }
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.email;
+    }
+
+    @Override
+    public String getPassword() {
+        return this.senha;
+    }
+
+    @Override
+    public String getRole() {
+        return "ROLE_VOLUNTARIO";
+    }
+
+    @Override
+    public boolean isActive() {
+        return this.ativo;
+    }
+
+    @Override
+    public Long getUserId() {
+        return this.id;
+    }
+
     public Endereco getEndereco() {
         return endereco;
     }
@@ -110,6 +151,7 @@ public class Voluntario {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
+
     public Set<Ong> getOngs() {
         return ongs;
     }
