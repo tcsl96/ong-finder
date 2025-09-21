@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class OngFinderApiApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(OngFinderApiApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(OngFinderApiApplication.class, args);
+  }
 }
