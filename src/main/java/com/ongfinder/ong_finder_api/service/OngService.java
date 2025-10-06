@@ -12,6 +12,7 @@ import java.util.List;
 
 @Service
 public class OngService {
+  private final OngRepository ongRepository;
 
     private final OngRepository ongRepository;
     private final VagaRepository vagaRepository;
