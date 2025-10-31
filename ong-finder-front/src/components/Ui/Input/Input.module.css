@@ -1,0 +1,64 @@
+.inputWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+}
+
+
+.label {
+  /* O alinhamento do label será herdado do contêiner pai (.formField) */
+  width: 100%;
+  font-family: var(--auth-font-main);
+  font-weight: var(--auth-font-weight-bold);
+  font-size: var(--auth-font-size-label);
+  color: var(--auth-color-text-primary);
+  margin-bottom: var(--spacing-auth-2xs);
+}
+
+
+.input {
+  width: 100%;
+  padding: var(--auth-padding-input);
+  border: var(--auth-border-input);
+  border-radius: var(--auth-border-radius-input);
+  font-family: var(--auth-font-main);
+  font-size: var(--auth-font-size-body);
+  color: var(--auth-color-text-primary);
+  background-color: var(--auth-color-bg-Input);
+  transition: var(--auth-transition-main);
+}
+
+
+.input:focus {
+  outline: none;
+  border-color: var(--auth-color-input-border-focus);
+  box-shadow: var(--auth-color-input-focus);
+  background-color: var(--auth-color-content);      /* Fundo branco ao focar */
+}
+
+
+.input:disabled {
+  background-color: var(--auth-color-inpu-disabled-bg); 
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+
+.input::placeholder {
+  color: var(--auth-color-placeholder);
+}
+
+
+/* <<< CLASSE DE ERRO >>> */
+/* Esta classe será aplicada dinamicamente pelo componente Input.jsx */
+.error {
+  border-color: var(--auth-color-error-border);
+  box-shadow: var(--auth-box-shadow-error ); 
+}
+
+
+.error:focus {
+  border-color: var(--auth-color-error-border);
+  box-shadow: var(--auth-box-shadow-error-focus);
+}

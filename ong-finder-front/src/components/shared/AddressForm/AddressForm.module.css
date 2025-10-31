@@ -1,0 +1,44 @@
+.sectionTitle {
+  font-size: var(--auth-font-size-h1);        /*Variação um pouco menor que o H1  1.25rem*/
+  font-weight: var(--auth-font-weight-bold);
+  color: var(--auth-color-text-primary);
+  margin-bottom: var(--spacing-auth-5lg);
+  padding-bottom: var(--spacing-auth-2xs);
+  border-bottom: var(--auth-line-below-h1);
+  width: 100%;
+  text-align: inherit;        /* Herda o alinhamento (center/left) */
+  margin-top: var(--spacing-auth-5lg);            /* controla o a distancia em RegisterUserForm, evitar de tirar, mas se tirar não é o fim do mundo */
+}
+
+
+/* O layout dos campos de endereço */
+.formGrid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-auth-4md); 
+  margin-bottom: var(--spacing-auth-5lg);
+}
+
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  text-align: inherit;                  /* Herda o alinhamento (center/left) */
+  gap: var(--spacing-auth-1xxs);
+}
+
+
+.errorContainer {
+  min-height: var(--spacing-auth-4md);
+  display: flex;
+  align-items: center;
+}
+
+
+/* Não pode tirar o important */
+.errorText { /* Renomeado de .error para evitar conflito, se necessário */
+  font-size: var(--auth-font-size-error) !important;
+  color: var(--auth-color-error-text) !important;
+  margin: 0 !important;
+}

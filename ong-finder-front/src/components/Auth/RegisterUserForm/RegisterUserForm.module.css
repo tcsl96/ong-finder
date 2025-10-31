@@ -1,0 +1,91 @@
+/* === ESTRUTURA GERAL DO FORMULÁRIO === */
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;           /* Alinha os filhos (título, grid, botão) */
+  gap: var(--spacing-auth-5lg);
+}
+
+
+.formContainer h1 {
+  font-size: var(--auth-font-size-h1);
+  font-weight: var(--auth-font-weight-bold);
+  color: var(--auth-color-text-primary);  
+}
+
+
+.formContainer p {
+  font-size: var(--auth-font-size-body);
+  color: var(--auth-color-text-secondary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-auth-5lg);
+}
+
+
+/* === LAYOUT DOS CAMPOS === */
+.formGrid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-auth-4md); 
+  margin-bottom: var(--spacing-auth-5lg);
+}
+
+
+/* === CAMPO DE INPUT E MENSAGEM DE ERRO === */
+/* Padrão herdado do LoginForm para consistência. /* Herda o alinhamento (center/left) da AuthPage */
+.formField {
+  display: flex;
+  flex-direction: column;
+  text-align: inherit; /* Herda o alinhamento da AuthPage (center/left) */
+  gap: var(--spacing-auth-1xxs);
+  color: var(--auth-color-placeholder);
+}
+
+
+/* Select - estilização das opções  */
+/* option{
+  color: var(--auth-color-placeholder);
+} */
+
+
+/* Contêiner da mensagem de erro para evitar "pulos" no layout. */
+.errorContainer {
+  min-height: var(--spacing-auth-4md);
+  display: flex;
+  align-items: center;
+}
+
+
+/* Não pode tirar o !important */
+.error {
+  font-size: var(--auth-font-size-error) !important;
+  color: var(--auth-color-error-text) !important;
+  margin: 0 !important;
+}
+
+
+.formContainer button{
+  max-width: var(--auth-max-small) !important;
+  width: 100% !important;
+  align-self: center;
+}
+
+
+/* =============================================================================================== */
+
+   @media (min-width: 800px) {
+
+
+    .formContainer {
+  gap: var(--spacing-auth-3sm);
+}
+
+
+.formContainer h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+   }

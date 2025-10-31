@@ -1,0 +1,229 @@
+/* O @import são herdamos os tokens da AuthPage. */
+
+/* === ESTRUTURA GERAL DO FORMULÁRIO === */
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;            /* Estica os filhos para preencher a largura */
+  gap: var(--spacing-auth-4md);
+}
+
+
+.formContainer h1 {
+  font-size: var(--auth-font-size-h1);
+  font-weight: var(--auth-font-weight-bold);
+  color: var(--auth-color-text-primary);
+  margin-top: var(--spacing-auth-2xs);
+  margin-bottom: var(--spacing-auth-1xxs);
+}
+
+
+.formContainer p {
+  font-size: var(--auth-font-size-body);
+  color: var(--auth-color-text-secondary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-auth-4md);
+}
+
+
+.inputsContainer{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-auth-6xl);
+}
+
+
+/* === CAMPO DE INPUT E MENSAGEM DE ERRO === */
+/* Este contêiner é a chave para o layout estável. */
+.formField {
+  display: flex;
+  flex-direction: column;
+  text-align: inherit;              /* Herda o alinhamento (center/left) da AuthPage */
+  gap: var(--spacing-auth-1xxs) !important;
+}
+
+
+/* O contêiner da mensagem de erro. */
+.errorContainer {
+  /* TÁTICA ANTI-PULO do Error: Reserva um espaço mínimo, mesmo quando vazio. */
+  min-height: var(--spacing-auth-4md); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* O texto do erro em si. */
+.error {
+  font-size: var(--auth-font-size-error) !important;
+  color: var(--auth-color-error-text) !important;
+  font-weight: var(--auth-font-weight-regular) !important;
+  margin: 0 !important;
+  margin-top: var(--spacing-auth-1xxs) !important;
+}
+
+
+/* Botão de entrar em login */
+.enterButton{
+  margin-top: var(--spacing-auth-5lg) !important;
+  width: 100% !important;
+  max-width: var(--auth-max-small) !important;
+  align-self: center;
+  background-color: var(--auth-color-button-ENTRAR-bg) !important;
+  color: var(--auth-color-button-ENTRAR-tx) !important;
+}
+
+
+.enterButton:hover{
+    background-color: var(--auth-color-button-ENTRAR-hover) !important;
+}
+
+
+.enterButton:active{
+    background-color: var(--auth-color-button-ENTRAR-active) !important;
+}
+
+
+/* === DIVISOR "ou" === */
+.divider {
+  margin: var(--spacing-auth-3sm) 0;
+  text-align: center;
+  color: var(--auth-color-OU);
+  font-weight: var(--auth-font-weight-bold);
+  font-size: var(--auth-font-size-label);
+  position: relative;
+}
+
+
+.divider::before,
+.divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: var(--auth-line-OU-height);
+  background-color: var(--auth-color-OU-Login);
+}
+
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+
+/* === LOGIN SOCIAL === */
+.socialLoginContainer {
+  max-width: var(--auth-max-small);
+  width: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-auth-6xl);
+  margin-bottom: var(--spacing-auth-4md);
+}
+
+
+/* Botão Social */
+.socialLoginContainer button{
+  max-height: var(--auth-line-social-button-height);
+  background-color: var(--auth-color-bg-SOCIAL-Button);
+  color: var(--auth-color-tx-SOCIAL-Button);
+  border: var(--auth-border-button-alt2);
+}
+
+
+.socialLoginContainer button:hover{
+  background-color: var(--auth-color-button-SOCIAL-hover);
+}
+
+
+.socialLoginContainer button:active{
+  background-color: var(--auth-color-button-SOCIAL-active);
+}
+
+
+.socialLoginContainer button:disabled{
+  background-color: var(--auth-color-button-SOCIAL-disabled);
+}
+/* FIM BOTÃO SOCIAL */
+
+
+.containerLogo{
+  width: 10%;
+}
+
+
+.containerLogo img{
+  width: var(--auth-social-logo-size);
+}
+
+
+.containerSpan{
+  width: 85%;
+  text-align: left;
+  margin-left: var(--spacing-auth-2xs);
+}
+
+
+.socialLoginContainer a {
+  font-size: var(--auth-font-size-label);
+  color: var(--auth-color-link);
+  text-align: center;
+  text-decoration: none;
+  font-weight: var(--auth-font-weight-bold);
+  margin-bottom: -1rem;
+}
+
+
+.socialLoginContainer a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ====================================================== */
+
+
+@media (min-width: 800px) {
+
+.formContainer {
+  gap: var(--spacing-auth-3sm);
+}
+
+
+.formContainer h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.inputsContainer{
+  gap: var(--spacing-auth-4md);
+}
+
+
+.formField {
+  gap: 0 !important;
+}
+
+
+/* O contêiner da mensagem de erro. */
+.errorContainer {
+  /* TÁTICA ANTI-PULO: Reserva um espaço mínimo, mesmo quando vazio. */
+  min-height: var(--spacing-auth-5lg); 
+  justify-content: inherit;
+  margin-left: var(--spacing-auth-2xs);
+  /* background-color: violet; */
+}
+
+
+/* Botão de entrar em login */
+.enterButton{
+  margin-top: var(--spacing-auth-4md) !important;
+}
+
+
+
+
+
+}

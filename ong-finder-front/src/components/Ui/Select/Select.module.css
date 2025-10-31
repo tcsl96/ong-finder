@@ -1,0 +1,98 @@
+.selectWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.label {
+  /* O alinhamento será herdado do contêiner pai (.formField) */
+  width: 100%;
+  font-family: var(--auth-font-main);
+  font-weight: var(--auth-font-weight-bold);
+  font-size: var(--auth-font-size-label);
+  color: var(--auth-color-text-primary);
+  margin-bottom: var(--spacing-auth-2xs);
+}
+
+
+.select {
+  width: 100%;
+  padding: var(--auth-padding-Select);
+  border: var(--auth-border-Select);
+  border-radius: var(--auth-border-radius-Select);
+  font-family: var(--auth-font-main);
+  font-size: var(--auth-font-size-body);
+  color: var(--auth-color-text-primary);
+  background-color: var(--auth-color-bg-Select);
+  cursor: pointer;
+  transition: var(--auth-transition-main);
+
+
+ /* Remove a aparência padrão do sistema */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+
+  /* Ícone de seta customizado, agora usando a cor de texto do token ( V ) <-- essa é a seta. */
+  /* background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); */
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+}
+
+
+.chevWrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 54%;
+  right: 4%;
+  width: 1.875rem;
+  /* background-color: yellow; */
+  pointer-events: none;
+  color: var(--auth-color-text-secondary);
+}
+
+
+.chevWrapper svg {
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+
+
+.selectWrapper:focus-within .chevWrapper svg {
+  transform: rotate(180deg);
+}
+
+
+.select:focus {
+  outline: none;
+  border-color: var(--auth-color-Select-border-focus);
+  box-shadow: var(--auth-color-Select-focus);
+  background-color: var(--auth-color-Select-focus-bg);
+}
+
+
+.select:disabled {
+  background-color: var(--auth-color-Select-disabled-bg);
+  opacity: 0.7;
+  cursor: not-allowed;
+  color: var(--auth-color-text-secondary);
+}
+
+
+/* Classe de erro, unificada com o componente Input */
+.error {
+  border-color: var(--auth-color-error-border);
+  box-shadow: var(--auth-box-shadow-error);
+}
+
+
+.error:focus {
+  border-color: var(--auth-color-error-border);
+  box-shadow: var(--auth-box-shadow-error-focus);
+}

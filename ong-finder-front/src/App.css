@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+#root {
+  --font-main: "Inter";
+  --font-primary-color: #FFFFFF;
+  --font-secondary-color: #bdbdbd;
+  --border-color: #757575;
+  --menu-hover-color: #ecebeb;
+  --background-primary-color: #FFFFFF;
+  --background-gradient: linear-gradient(0deg, rgba(12, 85, 156, 1) 30%, rgba(0, 0, 51, 1) 100%);
+  --background-secondary-color: #EEEEEE;
+  --background-header-color: #050537;
+  --primary-color-blue: #0C559C;
+  --secondary-color-orange: #FF9800;
+  --tertiary-color-green: #4CAF50;
+
+
+  /* Variáveis do Ikaro */
+  /* base: --secondary-color-orange */
+  --secondary-color-orange-hover:#F57C00;
+  --secondary-color-orange-active:#E65100;
+  --secondary-color-orange-disabled:#FFE0B2;
+  /* base: --tertiary-color-green */
+  --secondary-color-green-hover:#43A047;
+  --secondary-color-green-active:#388E3C;
+  --secondary-color-green-disabled:#C8E6C9;
+
+  
+
+
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body, html {
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 90%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

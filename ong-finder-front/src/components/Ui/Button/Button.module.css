@@ -1,0 +1,68 @@
+.Button {
+  width: 100%;
+  padding: var(--auth-padding-button);
+  border: var(--auth-border-button);
+  border-radius: var(--auth-border-radius-main);
+  font-family: var(--auth-font-main);
+  font-weight: var(--auth-font-weight-bold);
+  font-size: var(--auth-font-size-body);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--auth-transition-main);
+
+
+  /* Estilo padrão (ex: botões de login social) */
+  background-color: var(--auth-color-bg-Button);
+  color: var(--auth-color-tx-Button);
+  /* Permite que o conteúdo interno (ícone + texto) se alinhe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-auth-2xs);
+}
+
+
+.Button:hover {
+  background-color: var(--auth-color-button-hover);
+}
+
+
+.Button:active {
+  background-color: var(--auth-color-button-active);
+  transform: scale(0.98);
+}
+
+
+.Button:disabled {
+  background-color: var(--auth-color-button-disabled);
+  color: var(--auth-color-text-secondary);
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: not-allowed;
+  background-color: var(--auth-color-button-disabled);
+}
+
+
+/* COLOCAR A ANIMAÇÃO A ABAIXOO------------------------------------------ */
+
+/* Animação genérica de loading (sem alteração) */
+.loadingSpinner {
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 0.125rem solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

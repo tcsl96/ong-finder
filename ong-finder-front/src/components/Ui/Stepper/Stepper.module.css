@@ -1,0 +1,116 @@
+/* Em: src/components/Ui/Stepper/Stepper.module.css */
+
+.stepperContainer {
+  width: 100%;
+  display: flex;
+  align-items: flex-start; /* Alinha os grupos no topo */
+}
+
+
+.contentWrapper{
+  /* background-color: yellow; */
+  width: 4.25rem;   /* 6.25rem   tem a função de limitar o tamanho de tudo o conteudo, assim a linha fica com um tamnho uniformico*/
+}
+
+/* O grupo que contém uma etapa e sua linha */
+.stepGroup {
+  flex: 1 1 0; /* Permite que os grupos se estiquem igualmente */
+  display: flex;
+  align-items: flex-start;
+}
+/* O último grupo não precisa se esticar, apenas ocupar seu espaço */
+.stepGroup:last-child {
+  flex-grow: 0;
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--auth-stepper-color-text-below-circle-selected);
+  transition: var(--auth-transition-main);
+  /* color: yellow; */
+}
+
+.stepCounter {
+  width: var(--auth-stepper-circle-size);
+  height: var(--auth-stepper-circle-size);
+  border-radius: 50%;
+  background-color: var(--auth-stepper-bg-unselected-circle);
+  color: var(--auth-stepper-text-unselected-circle);
+  border: var(--auth-stepper-border-unselected-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--auth-font-weight-bold);
+  transition: var(--auth-transition-main);
+  position: relative; /* Para o z-index funcionar */
+  z-index: 1;
+}
+
+
+/*Texto que fica abaixo do circulo  não selecionado*/
+.stepName {
+  font-size: var(--auth-font-size-label);
+  margin-top: var(--spacing-auth-2xs);
+  font-weight: var(--auth-font-weight-regular);
+  white-space: nowrap; /* Evita que o nome quebre a linha */
+  color: var(--auth-stepper-color-text-below-circle-unselected);
+}
+
+
+/* --- A LINHA DE PROGRESSO --- */
+.connector {
+  flex-grow: 1;
+  justify-items: center;
+  height: 0.150rem;
+
+  background-color: var(--auth-color-ui-border);
+  margin: 0 var(--spacing-auth-sm);
+  position: relative; /* Contêiner para a linha de progresso */
+  /* Posicionamento para alinhar com o centro dos círculos */
+  top: 1.2rem;
+}
+
+.connectorLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0; /* Começa com largura 0 */
+  background-color: var(--auth-color-stepper-completed);
+  transition: width 0.5s ease-in-out; /* A ANIMAÇÃO */
+}
+
+/* --- ESTADOS | Circulo Alvo | circulo selecionado --- */
+.active .stepCounter {
+  border: var(--auth-stepper-border-selected-circle);
+  background-color: var(--auth-stepper-bg-selected-circle);
+  color: var(--auth-stepper-text-selected-circle);
+}
+
+/*Texto que fica abaixo do circulo selecionado*/
+.active .stepName {
+  color: var(--auth-stepper-color-text-below-circle) !important;
+  font-weight: var(--auth-font-weight-bold);
+}
+
+/*Circulo concluido*/
+.completed .stepCounter {
+  background-color: var(--auth-stepper-bg-completed-circle);
+  border: var(--auth-stepper-border-completed-circle);
+  color: var(--auth-stepper-text-completed-circle);
+}
+
+
+/*Texto que fica abaixo do circulo Concluido*/
+.completed .stepName {
+  color: var(--auth-stepper-color-text-below-circle-completed);
+  font-weight: var(--auth-font-weight-bold);
+}
+
+/* A MÁGICA ACONTECE AQUI */
+/* Quando o grupo está completo, a linha de progresso interna se expande */
+.completed .connectorLine {
+  width: 100%;
+}

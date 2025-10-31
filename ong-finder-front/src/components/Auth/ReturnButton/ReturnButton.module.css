@@ -1,0 +1,20 @@
+/* Mobile-First */
+
+
+.returnButton{
+    background: none;
+    border: none;
+    color: var(--auth-color-link);
+    cursor: pointer;
+    font-family: var(--auth-font-main);
+    font-size: var(--auth-font-size-body);
+    font-weight: var(--auth-font-weight-bold);
+    margin-bottom: var(--spacing-auth-6xl);
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-auth-4md);
+}
+
+
+/* =========================================================================================================== */
+/* pc */          /* pc */              /* pc */               /* pc */                 /* pc */

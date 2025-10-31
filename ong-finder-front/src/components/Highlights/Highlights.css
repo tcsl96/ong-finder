@@ -1,0 +1,184 @@
+.highlightsSection {
+  background-color: #fff;
+  padding: 4rem 1.5rem;
+}
+
+.highlightsContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.highlightsHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.highlightsHeader h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0056b3;
+  margin-bottom: 0.5rem;
+}
+
+.highlightsHeader p {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.highlightsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.highlightCard {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 320px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.highlightCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.highlightImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.highlightImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlightCategory {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff9800;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.highlightContent {
+  padding: 1.25rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.highlightContent h3 {
+  font-size: 1.1rem;
+  color: #004aad;
+  font-weight: 700;
+}
+
+.highlightDescription {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.highlightInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #6c757d;
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+.highlightInfo span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.highlightInfo img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+.highlightButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+}
+
+.btnDetails {
+  background-color: #f7a600;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btnDetails:hover {
+  background-color: #e69500;
+}
+
+.btnContact {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btnContact:hover {
+  background-color: #43a047;
+}
+
+.viewAllContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btnViewAll {
+  background-color: #004aad;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btnViewAll:hover {
+  background-color: #003b8a;
+}
+
+@media (max-width: 768px) {
+  .highlightCard {
+    width: 100%;
+  }
+}

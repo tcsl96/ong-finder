@@ -1,0 +1,132 @@
+@import './AuthPage.tokens.css';
+
+/* === ESTRUTURA BASE (Mobile-First) === */
+
+/* O contêiner da página inteira, responsável pelo fundo e por centralizar o card. */
+.authPageContainer {
+  font-family: var(--auth-font-main);
+  background-color: var(--auth-color-background);
+  min-height: 100vh;
+  padding: var(--spacing-auth-6xl) var(--spacing-auth-5lg);
+  /* Centraliza o card de autenticação vertical e horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha ao topo para formulários longos */
+}
+
+
+/* O "card" branco que contém os formulários. */
+.authWrapper {
+  background-color: var(--auth-color-content);
+  width: 100%;
+  max-width: var(--auth-max-large);
+  padding: var(--spacing-auth-6xl) var(--spacing-auth-5lg);
+  border-radius: var(--auth-border-radius-main);
+  box-shadow: var(--auth-shadow-card);
+
+  /* Organiza os filhos (em uma coluna */
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  gap: var(--spacing-auth-6xl);
+}
+
+
+/* Contêiner para os links no rodapé do card. */
+.footerLinks {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-auth-4md);
+  font-size: var(--auth-font-size-label);
+}
+
+
+/* Botão com aparência de link para "Cadastrar ONG". */
+.linkButton {
+  background: none;
+  border: none;
+  color: var(--auth-color-link);
+  font-family: var(--auth-font-main);
+  font-weight: var(--auth-font-weight-bold);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: inherit;
+  transition: var(--auth-transition-main);
+}
+
+
+.linkButton:hover {
+  opacity: 0.8; /* Efeito de hover sutil */
+}
+
+
+.successContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--spacing-auth-4md);
+}
+
+
+
+/*
+=================================================================
+  Animações de Transição de Formulário
+=================================================================
+*/
+
+/* --- A ANIMAÇÃO DE SAÍDA (EXIT) --- */
+
+/* O estado inicial do formulário que está saindo. */
+.fadeExit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* O estado final do formulário que está saindo. */
+/* Ele desliza para a esquerda e desaparece. */
+.fadeExitActive {
+  opacity: 0;
+  transform: translateX(-1.25rem);
+  transition: all 300ms ease-in-out;
+}
+
+/* --- A ANIMAÇÃO DE ENTRADA (ENTER) --- */
+
+/* O estado inicial do novo formulário que está entrando. */
+/* Ele começa à direita e invisível. */
+.fadeEnter {
+  opacity: 0;
+  transform: translateX(1.25rem);
+}
+
+/* O estado final do novo formulário que está entrando. */
+/* Ele desliza para sua posição final e se torna visível. */
+.fadeEnterActive {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms ease-in-out;
+}
+
+
+
+/* === LAYOUT DESKTOP === */
+/* Aplica as mudanças quando a tela for maior que nosso breakpoint. */
+/* @media (min-width: var(--auth-breakpoint-desktop)) { Não ta suportando */
+@media (min-width: 800px) {
+
+  .authPageContainer {
+    align-items: center; /* Centraliza verticalmente em telas maiores */
+  }
+
+  .authWrapper {
+    max-width: var(--auth-max-xlarge);
+    padding: var(--spacing-auth-7xxl);
+    text-align: left; /* <<< DIRETIVA DE IX: Alinha os labels à esquerda no desktop */
+
+
+  }
+}

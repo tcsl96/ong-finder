@@ -1,0 +1,266 @@
+
+/* Propósito: Este arquivo serve para unificar todas as variáveis da AuthPage. */
+/* Doutrina: Mobile-First, Arquitetura baseada em Tokens. */
+
+
+/* 1.1 - AuthPage | src/pages/AuthPage/AuthPage.jsx */
+
+/* 2.1 - RegisterOngForm |  src/components/Auth/RegisterOngForm/RegisterOngForm.module.css */
+/* 2.2 - AuthToggle |  src/components/Auth/AuthToggle/AuthToggle.module.css */
+
+/* 3.1 - LoginForm   |  src/components/Auth/LoginForm/LoginForm.module.css */
+/* 3.2 - RegisterUserForm   | Nada */
+/* 3.3 - ReturnButton   | Nada */
+
+/* 4-5.A - AddressForm  |   src/components/shared/AddressForm/AddressForm.module.css */
+
+/* 5.1 - Button  | src/components/Ui/Button/Button.module.css */
+/* 5.2 - Input   | src/components/Ui/Input/Input.module.css */
+/* 5.3 - Select  | src/components/Ui/Select/Select.module.css */
+
+/* 6.1 - Error (ele não é um componente) */
+
+/* 7.1 - SubmitAnimation (ANIMAÇÃO) | SubmitAnimation.module.css */
+
+/* 7.2 - Stepper (Animação de etapas )   |  src/components/Ui/Stepper/Stepper.module.css */
+
+
+/* Observações */
+/* 1 - Ponto de quebra para a transição de mobile para desktop, o breakpoint, sendo de: 768px . */
+
+/* ================================================================= */
+
+
+
+:root {  
+
+/* ---+ Globais +--- */
+
+/* === ESPAÇAMENTO | PADDING === */
+    --spacing-auth-1xxs: 0.25rem;    /* 04px */
+    --spacing-auth-2xs: 0.5rem;      /* 08px */
+    --spacing-auth-3sm: 0.75rem;     /* 12px */
+    --spacing-auth-4md: 1rem;        /* 16px */
+    --spacing-auth-5lg: 1.5rem;      /* 24px */
+    --spacing-auth-6xl: 2rem;        /* 32px */
+    --spacing-auth-7xxl: 2.5rem;     /* 40px */
+
+
+
+/* === FONTES | FONTS === */
+    --auth-font-main: "Inter", sans-serif;
+    --auth-font-size-h1: 1.6rem;
+    --auth-font-size-body: 1rem;       /* NOVA: Tamanho padrão para parágrafos */
+    --auth-font-size-label: 0.875rem;  /* NOVA: Tamanho para labels de inputs */
+    --auth-font-weight-regular: 400;   /* NOVA: Peso de fonte padrão */
+    --auth-font-weight-bold: 600;      /* NOVA: Peso para títulos e botões */
+
+
+    
+/* === MAX-WIDTH === */
+    --auth-max-micro: 15rem;
+    --auth-max-small: 20rem;
+    --auth-max-medium: 25rem;
+    --auth-max-large: 30rem;
+    --auth-max-xlarge: 40rem;
+    --auth-max-button: 18.75rem;    /* 300PX - Isso é local, em alguns Buttons, principalmente em LoginForm */
+
+
+
+/* === CORES | COLORS === */
+    --auth-color-background: #EEEEEE;
+    --auth-color-content: #FFFFFF;               /* cor de fundo geral */
+    --auth-color-blue: #0C559C;                  /* Utiliza em input(verificar) */
+    --auth-color-link: #0C559C;
+    --auth-color-text-primary: #333333;          /* Cor principal para textos e títulos */
+    --auth-color-placeholder: #757b8a;          /* Cor principal para textos e títulos */
+
+
+
+
+/* === TOKENS DE FÁBRICA | FACTORY TOKENS === */
+    --auth-border-radius-main: 0.5rem;
+    --auth-shadow-card: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+
+
+    
+/* === OUTROS | MISC === */
+     --auth-transition-main: all 0.2s ease-in-out; /* Transição padrão para hovers */
+
+        /* ---+ ERROR Geral +--- */
+            --auth-color-error-text: #b71c1c;       /* Um vermelho escuro para o texto do erro */
+            --auth-color-text-secondary: #757575;   /* Cor para textos de apoio e placeholders */
+            --auth-font-size-error: 0.75rem;          /* Tamanho para mensagens de erro */
+            --auth-box-shadow-error: 0 0 0 0.200rem rgba(183, 28, 28, 0.15);
+            --auth-box-shadow-error-focus: var(--auth-color-input-focus ),0 0 0 0.200rem rgba(183, 28, 28, 0.15);
+            --auth-color-error-border: #b71c1c;      /* Cor da borda para inputs inválidos */
+    
+
+/* =========================================================================================================  */
+
+
+/* ---+ Locais +--- */
+
+/* === ESPAÇAMENTO | PADDING === */
+
+    /* 2.1.RegisterOngForm */
+        --auth-maximum-FOTO-size: 6.25rem;
+        --auth-maximum-FOTO-size: 12.5rem;
+        --auth-input-FOTO-height: 3.125rem;
+
+
+    /* 3.1.LoginForm */
+        --auth-line-OU-height: 0.100rem;
+        --auth-line-social-button-height: 3.125rem;     /* 50px */ 
+        --auth-social-logo-size: 1.563rem;
+
+
+
+/* === CORES | COLORS === */
+
+    /* 2.1.RegisterOngForm */
+        --auth-bg-login-FOTO: #f9f9f9;   /* #e0e0e0    |    # ccc */
+        --auth-color-login-FOTO-hover: #e0e0e0;
+        --auth-color-login-FOTO-active: #d0d0d0;
+        /* Botão de voltar */
+        --auth-color-bg-VOLTAR: #EEEEEE;
+        --auth-color-VOLTAR-hover: #e0e0e0;
+        --auth-color-VOLTAR-active: #d0d0d0;
+        --auth-color-VOLTAR-disabled: #ccc;
+        --auth-color-tx-VOLTAR: #333333;
+
+
+    /* 2.2.AuthToggle --- */
+        --auth-color-bg-toggle: #EEEEEE;
+        --auth-color-font-toggle: #757575;
+        --auth-color-bg-toggle-act: #FFFFFF;
+        --auth-color-font-toggle-act: #333;
+        --auth-color-bg-toggle-act: #FFFFFF;
+
+
+    /* 3.1.LoginForm */
+        --auth-color-button-ENTRAR-bg: #4cb050;
+        --auth-color-button-ENTRAR-tx: #ffffff;
+        --auth-color-button-ENTRAR-hover: #449a48;
+        --auth-color-button-ENTRAR-active: #3c873f;
+        --auth-color-OU: #757575;
+        --auth-color-OU-Login: #e0e0e0;
+            /* Botão do Google e FaceBook */
+            --auth-color-bg-SOCIAL-Button: #EEEEEE;                    /* EEEEEE | 4cb050*/
+            --auth-color-tx-SOCIAL-Button: #333333;                    /* 333333 | 4cb050*/
+            --auth-color-button-SOCIAL-hover: #e0e0e0;                 /* e0e0e0 | 449a48 */
+            --auth-color-button-SOCIAL-active: #d0d0d0;                /* d0d0d0 | 3c873f*/
+            --auth-color-button-SOCIAL-disabled: #ccc;                 /* ccc | 79c07b */
+
+
+    /* 5.1.Button --- */
+        --auth-color-bg-Button: #4cb050;                    /* EEEEEE | 4cb050*/
+        --auth-color-tx-Button: #ffffff;                    /* EEEEEE | 4cb050*/
+        --auth-color-button-hover: #449a48;                 /* e0e0e0 | 449a48 */
+        --auth-color-button-active: #3c873f;                /* d0d0d0 | 3c873f*/
+        --auth-color-button-disabled: #79c07b;                 /* ccc | 79c07b */
+
+
+    /* 5.2.Input --- */
+        --auth-color-bg-Input: #f9f9f9;
+        --auth-color-input-border-focus: #0C559C;
+        --auth-color-input-focus: 0 0 0 0.188rem rgba(12, 85, 156, 0.25);
+        --auth-color-input-focus-bg: #FFFFFF;           /*igual a cor de content */
+        --auth-color-inpu-disabled-bg: #e9ecef;         /* Ta errado e é para deixar assim, o nome*/
+    
+
+    /* 5.3.Select --- */
+        --auth-color-bg-Select: #f9f9f9;
+        --auth-color-Select-border-focus: #0C559C;
+        --auth-color-Select-focus: 0 0 0 0.188rem rgba(12, 85, 156, 0.25);
+        --auth-color-Select-focus-bg: #FFFFFF;              /*igual a cor de content */
+        --auth-color-Select-disabled-bg: #e9ecef;
+
+
+    /* 7.1.SubmitAnimation --- */
+        --auth-color-success: #4cb050;                      /* #4cb050  |  #EEEEEE   |  #d0d0d0 */
+        --auth-color-success-hover: #449a48;                /* #449a48  |  #e0e0e0   |  #b1aeae   | #567958*/
+        --auth-color-text-on-primary-action: #ffffff;       /* #ffffff  |  #333333 */
+
+
+    /* 7.2.Stepper */
+
+        /* -- Circulo Não selecioando -- */
+            --auth-stepper-bg-unselected-circle: #f9f9f9;     /*Cor de fundo do circulo não selecionado*/
+            --auth-stepper-text-unselected-circle: #333333;     /*Cor do texto do circulo não selecionado*/
+            --auth-stepper-color-text-below-circle-unselected: #333333;     /*Cor do texto abaixo circulo selecionado*/
+
+        /* -- Circulo selecioando -- */
+            --auth-stepper-bg-selected-circle: #4cb050;     /* 8bc34a | Cor de fundo do circulo selecionado*/
+            --auth-stepper-text-selected-circle: #ffffff;     /*Cor do texto do circulo selecionado*/
+            --auth-stepper-color-text-below-circle-selected: #333333;     /*Cor do texto abaixo circulo selecionado*/
+
+        /* -- Circulo Concluido -- */
+            --auth-stepper-bg-completed-circle: #4cb050;     /*Cor de fundo do circulo concluido*/
+            --auth-stepper-text-completed-circle: #ffffff;     /*Cor do texto interno do circulo concluido*/
+            --auth-stepper-color-text-below-circle-completed: #333333;     /*Cor do texto abaixo circulo concluido*/
+
+        /* -- Linha -- */
+            --auth-color-stepper-completed: #4cb050;
+
+
+
+/* === TOKENS DE FÁBRICA | FACTORY TOKENS === */
+
+    /* 2.1.RegisterOngForm */
+        --auth-input-login-FOTO: 0.100rem solid #f9f9f9;  /* #e0e0e0    |    # ccc */
+        --auth-border-login-FOTO: 0.100rem solid #ccc;  /* #e0e0e0    |    # ccc */
+        --auth-border-login-radius-FOTO: 0.375rem;
+
+
+    /* 2.2.AuthToggle --- */
+        --auth-border-AuthToggle-external: 0.100rem solid #e0e0e0;  /* #e0e0e0    |    # ccc */
+        --auth-border-radius-AuthToggle: 0.375rem;
+
+
+    /* 4-5.A.AddressForm --- */
+        --auth-line-below-h1: 0.150rem solid #e0e0e0 ;
+
+
+    /* 5.1.Button --- */
+        --auth-padding-button: 0.85rem 1rem;
+        --auth-border-button: 0.100rem solid #4cb050;     /* #4cb050 ||| 0.100rem / transparent | 0.150rem /  #3c873f */
+            /* Cor alternativa */
+                --auth-border-button-alt: 0.100rem solid #ccc;
+                --auth-border-button-alt2: 0.100rem solid transparent;
+
+
+    /* 5.2.Input --- */
+        --auth-padding-input: 0.85rem 1.1rem;
+        --auth-border-input: 0.100rem solid #ccc; 
+        --auth-border-radius-input: 0.375rem;
+        
+
+    /* 5.3.Select --- */
+        --auth-padding-Select: 0.85rem 1.1rem;
+        --auth-border-Select: 0.100rem solid #ccc;
+        --auth-border-radius-Select: 0.375rem;
+
+
+    /* 7.1.SubmitAnimation --- */
+        --auth-submit-animation-button-height: 3.125rem;            
+    /* Utiliza também o --auth-max-button */
+
+
+    /* 7.2.Stepper */
+        --auth-stepper-circle-size: 2.5rem;     /* 2rem */
+
+        /* -- Circulo Não selecioando -- */
+            --auth-stepper-border-unselected-circle: 0.170rem solid #ccc;    /*a5d6a7 | c8e6c9*/
+
+        /* -- Circulo selecioando -- */
+            --auth-stepper-border-selected-circle: 0.170rem solid #4cb050;   /*449a48 | 3c873f | transparent*/
+
+        /* -- Circulo Concluido -- */
+            --auth-stepper-border-completed-circle: 0.170rem solid #4cb050; 
+
+    
+
+  
+
+}

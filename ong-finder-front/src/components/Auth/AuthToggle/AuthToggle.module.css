@@ -1,0 +1,63 @@
+.toggleContainer {
+  background-color: var(--auth-color-bg-toggle);
+  width: 100%;
+  max-width: var(--auth-max-medium);
+  display: flex;
+  padding: var(--spacing-auth-1xxs);
+  border: var(--auth-border-AuthToggle-external); 
+  border-radius: var(--auth-border-radius-main); 
+
+}
+
+
+.toggleButton {
+  background-color: transparent;
+  flex: 1; /* Ocupa espaço disponível igualmente */
+  padding: var(--spacing-auth-3sm) var(--spacing-auth-4md);
+  border: none;
+  border-radius: var(--auth-border-radius-AuthToggle);
+  font-family: var(--auth-font-main);
+  font-weight: var(--auth-font-weight-bold);
+  font-size: var(--auth-font-size-label);
+  color: var(--auth-color-font-toggle);
+  cursor: pointer;
+  transition: var(--auth-transition-main);
+
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  gap: var(--spacing-auth-2xs);
+  position: relative;
+  /* background-color: yellow; */
+}
+
+
+.activeButton {
+  background-color: var(--auth-color-bg-toggle-act);
+  color: var(--auth-color-font-toggle-act);
+  box-shadow: var(--auth-shadow-card);
+}
+
+
+.childrenWrapperLogin,
+.childrenWrapperUser {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-auth-2xs); 
+  width: auto;
+  padding: 0;
+  /* background-color: violet; */
+}
+
+
+.loginIcon,
+.userIcon {
+  flex-shrink: 0; /* mantém o ícone no tamanho definido */
+}
+
+
+.loginText,
+.userText {
+  flex: none;     /* deixa o texto com largura natural */
+}

@@ -1,0 +1,166 @@
+* {
+  --border-color-white: #ffff;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: var(--font-main);
+}
+
+.header-banner {
+  text-align: center;
+  background: linear-gradient(
+    0deg,
+    rgba(12, 85, 156, 1) 10%,
+    rgba(0, 0, 51, 1) 100%
+  );
+  color: #ffff;
+}
+
+.header-banner .container {
+  flex-direction: column;
+}
+
+.main-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 5% 0;
+  font-size: 24px;
+}
+
+.text-description {
+  width: 90%;
+  font-size: 14px;
+  color: var(--font-secondary-color);
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.input-search {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid var(--border-color-white);
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--border-color-white);
+}
+
+.input-search::placeholder {
+  color: var(--font-secondary-color);
+}
+
+.btn-search {
+  display: flex;
+  width: 12%;
+  align-self: stretch;
+  justify-content: center;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--secondary-color-orange);
+}
+
+.search-icon {
+  display: flex;
+  width: 30px;
+}
+
+.data-info {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 10% 0;
+}
+
+.data h2 {
+  color: var(--secondary-color-orange);
+}
+
+.data p {
+  color: var(--border-color-white);
+}
+
+.icon {
+  margin: 20% 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.icon-description {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 90%;
+}
+
+.icon-description p {
+  color: var(--font-secondary-color);
+}
+
+@media (min-width: 1024px) {
+  .header-banner {
+    width: 100%;
+  }
+
+  .main-text {
+    font-size: 36px;
+  }
+
+  .text-description {
+    font-size: 24px;
+  }
+
+  .input-group {
+    width: 60%;
+  }
+
+  .input-search {
+    padding: 20px;
+  }
+
+  .data-info {
+    justify-content: center;
+    gap: 10em;
+  }
+
+  .data > h2 {
+    font-size: 36px;
+  }
+
+  .data > p {
+    font-size: 24px;
+  }
+
+  .icons-values {
+    display: flex;
+  }
+
+  .icon,
+  .data-info {
+    margin: 5%;
+  }
+
+  .icon > img {
+    width: 60px;
+  }
+}

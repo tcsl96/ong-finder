@@ -1,0 +1,102 @@
+/* === ESTRUTURA BASE (MOBILE-FIRST) === */
+.impactSection {
+  background-color: var(--background-secondary-color);
+  padding: 4rem 1.5rem;
+  /* background-color: yellow; */
+}
+
+.impactContainer {
+  max-width: 68.75rem;
+  margin: 0 auto;
+  /* background-color: red; */
+}
+
+.impactHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+  /* background-color: tomato; */
+}
+
+.impactHeader h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--primary-color-blue);
+  margin-bottom: 0.75rem;
+}
+
+.impactHeader p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 37.50rem;
+  margin: 0 auto;
+}
+
+.impactGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Uma coluna no mobile */
+  gap: 1.5rem;
+  /* background-color: steelblue; */
+}
+
+.impactCard {
+  background-color: var(--background-primary-color);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  border: 0.100rem solid #e9ecef;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* === ANIMAÇÃO DE HOVER === */
+.impactCard:hover {
+    /* transform: scale(1.03); */
+  transform: translateY(-0.5rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.iconWrapper {
+  width: 4.375rem;
+  height: 4.375rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* Cores dos fundos dos ícones */
+.iconBgGreen { background-color: #e7f5ec; color: #28a745; }
+.iconBgOrange { background-color: #fff4e6; color: #ff9800; }
+.iconBgBlue { background-color: #e7f0f9; color: #0c559c; }
+.iconBgLightGreen { background-color: #e8f5e9; color: #4caf50; }
+
+.impactValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color-blue);
+}
+
+.impactLabel {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+/* === LAYOUT DESKTOP === */
+@media (min-width: 768px) {
+  .impactGrid {
+    /* Duas colunas para tablets */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .impactGrid {
+    /* Quatro colunas para desktop */
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,108 @@
+
+
+
+/* src/components/Ui/Animations/SubmitAnimation.module.css */
+.wrapper {
+  position: relative;
+  width: 21.25rem;
+  height: 3.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  /* background-color: yellow; */
+}
+
+.button {
+  background: var(--auth-color-success);
+  height: var(--auth-submit-animation-button-height);
+  width: var(--auth-max-button);
+  text-align: center;
+  position: relative;
+  cursor: default;
+  border-radius: var(--auth-border-radius);
+  transition:
+    width 1.3s cubic-bezier(.22,.94,.32,1),
+    height 1.3s cubic-bezier(.22,.94,.32,1),
+    border-radius 1.3s cubic-bezier(.22,.94,.32,1),
+    opacity 200ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.buttonMorphed {
+  width: var(--auth-max-button);
+  height: 0.625rem;
+  border-radius: 12.5rem;
+}
+
+.buttonCollapsed {
+  width: 0 !important;
+  transition: width 1ms linear;
+  background-color: transparent;
+}
+
+.buttonHidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.text {
+  font: bold 1rem/1 var(--auth-font-family-main);
+  color: var(--auth-color-text-on-primary-action);
+  transition: opacity 100ms linear;
+}
+
+.textHidden {
+  opacity: 0;
+}
+
+.progressBar {
+  position: absolute;
+  height: 0.625rem;
+  width: 0;
+  border-radius: 12.5rem;
+  background: var(--auth-color-success-hover);
+  transition: width 2s linear, height 0.75s ease, border-radius 0.75s ease;
+  z-index: 2;
+}
+
+.progressGrowing {
+  width: var(--auth-max-button);
+}
+
+.progressCircle {
+  width: 3.75rem;
+  height: 3.75rem;
+  /* border: 0.100rem solid #b1aeae; */
+  border-radius: 50%;
+  background-color: var(--auth-color-success);
+  transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+}
+
+.checkSvg {
+  width: 1.875rem;
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.check {
+  fill: none;
+  stroke: var(--auth-color-text-on-primary-action);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* começa invisível; a opacidade é alterada via JS quando for hora de desenhar */
+  opacity: 0;
+  transition: opacity 120ms linear, stroke-dashoffset 0.2s ease-in-out;
+}

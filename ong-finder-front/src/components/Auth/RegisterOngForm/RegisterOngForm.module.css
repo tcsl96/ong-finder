@@ -1,0 +1,232 @@
+/* === ESTRUTURA GERAL DO FORMULÁRIO === */
+.formContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;       /* Garante que os filhos ocupem a largura total */
+  gap: var(--spacing-auth-5lg);     /* Espaço maior entre o cabeçalho, grid e botões */
+  margin-top: -3rem;
+}
+
+
+.stepperWrapper{
+  /* background-color: yellow; */
+  width: 100%;
+  padding: 0 5%;
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+}
+
+
+.formContainer h1 {
+  font-size: var(--auth-font-size-h1);
+  font-weight: var(--auth-font-weight-bold);
+  color: var(--auth-color-text-primary);
+}
+
+
+.formContainer p {
+  font-size: var(--auth-font-size-body);
+  color: var(--auth-color-text-secondary);
+  margin-top: 0;
+  margin-bottom: var(--spacing-auth-5lg);
+}
+
+
+/* === LAYOUT DOS CAMPOS  === */
+.formGrid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-auth-4md);
+  margin-bottom: var(--spacing-auth-5lg);
+  margin-top: var(--spacing-auth-6xl);
+}
+
+
+/* === CAMPO DE INPUT E MENSAGEM DE ERRO === */
+.formField {
+  display: flex;
+  flex-direction: column;
+  text-align: inherit;                    /* Herda o alinhamento (center/left) da AuthPage */
+  gap: var(--spacing-auth-1xxs);
+}
+
+
+.errorContainer {
+  min-height: var(--spacing-auth-4md);
+  display: flex;
+  align-items: center;
+}
+
+
+/* Não pode tirar o !important */
+.error {
+  font-size: var(--auth-font-size-error) !important;
+  color: var(--auth-color-error-text) !important;
+  margin: 0 !important;
+}
+
+
+/* Select - estilização das opções  */
+/* option{
+  color: var(--auth-color-placeholder);
+} */
+
+
+
+/* FOTO-LOGO FOTO-LOGO FOTO-LOGO FOTO-LOGO */
+/* Não pode tirar o !important */
+.labelFoto{
+  font-family: var(--auth-font-main) !important;
+  font-weight: var(--auth-font-weight-bold) !important;
+  font-size: var(--auth-font-size-label) !important;
+  color: var(--auth-color-text-primary) !important  ;
+}
+
+
+.fileInputHidden {
+  display: none;
+}
+
+
+ .fileInputLabel {
+  /* display: inline-block; */
+  display: flex;
+  padding: var(--spacing-auth-3sm) var(--spacing-auth-4md);
+  background-color: var(--auth-bg-login-FOTO);
+  border: var(--auth-border-login-FOTO);
+  border-radius: var(--auth-border-login-radius-FOTO);
+  cursor: pointer;
+  font-family: var(--auth-font-main) ;
+  /* font-weight: var(--auth-font-weight-bold) ; */
+  font-weight: 450 ;
+  font-size: var(--auth-font-size-label) ;
+  /* color: var(--auth-color-text-primary) ; */
+  color: var(--auth-color-placeholder) ;
+  transition: var(--auth-transition-main);
+  text-align: left;
+  height: var(--auth-input-FOTO-height);
+  /* line-height: 2rem; */
+  align-items: center;
+  /* max-width: 200px; */
+}
+
+
+.fileInputLabel:hover {
+  background-color: var(--auth-color-login-FOTO-hover);
+}
+
+
+.fileInputLabel:active {
+  background-color: var(--auth-color-login-FOTO-active);
+}
+
+
+.fileInputLabel span{
+  position: relative;
+  left: 0.65%;
+  top: 5%;
+}
+
+
+.fileName {
+  font-size: var(--auth-font-size-error);
+  color: var(--auth-color-text-secondary);
+  /* margin-top: var(--spacing-auth-2xs); */
+  /* Garante que nomes longos não quebrem o layout */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* === ESTILOS ESPECÍFICOS PARA O PREVIEW DA LOGO === */
+
+.previewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-auth-2xs);
+  border: var(--auth-border-login-FOTO);
+  border-radius: var(--auth-border-login-radius-FOTO);
+  background-color: var(--auth-bg-login-FOTO);
+  margin-top: -1rem;
+}
+
+
+.logoPreview {
+  max-width: var(--auth-maximum-FOTO-size);
+  max-height: var(--auth-maximum-FOTO-size);
+  object-fit: cover;
+}
+
+
+.removeButton {
+  background: none;
+  border: none;
+  color: var(--auth-color-error-text);
+  font-size: var(--auth-font-size-error);
+  font-weight: var(--auth-font-weight-bold);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: var(--spacing-auth-1xxs);
+}
+
+
+/* Não pode tirar o !important */
+.formContainer button{
+  max-width: var(--auth-max-small) !important;
+  width: 100% !important;
+  align-self: center;
+}
+
+
+.ButtonVoltar{
+  background-color: var(--auth-color-bg-VOLTAR);
+  color: var(--auth-color-tx-VOLTAR);
+  border: var(--auth-border-button-alt);
+}
+
+
+.ButtonVoltar:hover{
+  background-color: var(--auth-color-VOLTAR-hover);
+}
+
+
+.ButtonVoltar:active{
+  background-color: var(--auth-color-VOLTAR-active);
+}
+
+
+.ButtonVoltar:disabled{
+  background-color: var(--auth-color-VOLTAR-disabled);
+
+}
+
+
+
+/* ========================================================================= */
+/* O media query foi removido para manter o layout vertical consistente. */
+
+
+   @media (min-width: 800px) {
+
+
+    .formContainer {
+  gap: var(--spacing-auth-3sm); 
+}
+
+
+.formContainer h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/* .fileInputLabel {
+  text-align: left;
+
+} */
+
+   }
