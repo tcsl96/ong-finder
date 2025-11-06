@@ -6,6 +6,9 @@ import instagram from '../../assets/icons/white-instagram.svg';
 import linkedin from '../../assets/icons/white-linkedin.svg';
 import logo from '../../assets/icons/white-Logotipo.svg';
 import twitter from '../../assets/icons/white-twitter.svg';
+import mission from '../../assets/icons/white-mission.svg';
+import vision from '../../assets/icons/white-vision.svg';
+
 import './Footer.css';
 
 export default function Footer() {
@@ -15,7 +18,7 @@ export default function Footer() {
                 <section className='grid'>
                     <div className="footer-introduction">
                         <img className="logo-image" src={logo} alt="ONG Finder LogoTipo" />
-                        <p className="introduction-text">Conectando pessoas com organizações que fazem a diferença
+                        <p className="introduction-text">Conectando pessoas com organizações que fazem a diferença.
                             Encontre ONGs próximas a você e seja parte da mudança.</p>
                         <div className="icons-media">
                             <img className="media-icon" src={facebook} alt="Icone do Facebook" />
@@ -23,6 +26,16 @@ export default function Footer() {
                             <img className="media-icon" src={linkedin} alt="Icone do Linkedin" />
                             <img className="media-icon" src={twitter} alt="Icone do X" />
                         </div>
+                    </div>
+
+                    <div className="mission">
+                        <img className="mission-icon" src={mission} alt="Ícone de Missão" /> Missão
+                        <p className="mission-text">Simplificar a forma como as pessoas descobrem e se envolvem com trabalho social local.</p>
+                    </div>
+
+                    <div className="vision">
+                        <img className="vision-icon" src={vision} alt="Ícone de Visão" /> Visão
+                        <p className="vision-text">Ser a ponte que conecta milhões de pessoas a oportunidades de causar impacto em suas cidades.</p>
                     </div>
 
                     <div className="list-menus">
@@ -54,7 +67,7 @@ export default function Footer() {
                     <div className="footer-details">
                         <span className="line-trought"></span>
                         <div className="details">
-                            <p className="directives">© 2024 ONG Finder. Todos os direitos reservados.</p>
+                            <p className="directives">© 2025 ONG Finder. Todos os direitos reservados.</p>
                             <p className="privacy">Política de Privacidade</p>
                             <p className="terms">Termos de Uso</p>
                         </div>
